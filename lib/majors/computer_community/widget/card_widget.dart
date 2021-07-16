@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:front_end_project_database_v2/majors/computer_community/util/core_computer_community_declaration.dart';
 
 class CardCourseComputerCommunity extends StatelessWidget {
   final String chapter;
@@ -12,6 +13,7 @@ class CardCourseComputerCommunity extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var variable = CoreComputerCommunityDeclareURL();
     return Card(
       elevation: 2,
       child: ListTile(
@@ -19,14 +21,11 @@ class CardCourseComputerCommunity extends StatelessWidget {
             'Computer Community',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
-          subtitle: Text('Mr.Kin No'),
+          subtitle: Text('Mr.Kim No'),
           trailing: Text(chapter, style: TextStyle(color: Colors.indigo)),
           leading: CircleAvatar(
             radius: 20,
-            child: CircleAvatar(
-                radius: 20,
-                child: Image.network(
-                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRsna4ika9S80RUmpoVj8LwJdKpFIfxzfHwAWG2wrN7L2v-W-pVeYHd-YlwOyC6cKiR3I&usqp=CAU')),
+            child: CircleAvatar(radius: 20, child: Text('C')),
           ),
           onTap: () {
             pathOfPdfOnTap();

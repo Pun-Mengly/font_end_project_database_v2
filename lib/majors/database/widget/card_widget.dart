@@ -28,7 +28,7 @@ class CardCourseDatabase extends StatelessWidget {
           ),
           leading: CircleAvatar(
             radius: 20,
-            child: CircleAvatar(child: Image.network(variable.leadingImage)),
+            child: Image.asset(variable.leadingImage),
           ),
           onTap: () {
             pathOfPdfOnTap();

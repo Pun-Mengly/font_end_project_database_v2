@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:front_end_project_database_v2/majors/c_plus_plus/all_chapter.dart';
 import 'package:front_end_project_database_v2/majors/computer_community/all_chapter.dart';
+import 'package:front_end_project_database_v2/majors/data_structure/all_chapter.dart';
 import 'package:front_end_project_database_v2/majors/database/all_chapter.dart';
+import 'package:front_end_project_database_v2/majors/english/all_chapter.dart';
+import 'package:front_end_project_database_v2/majors/iot/all_chapter.dart';
 
 class TabBarContent extends StatefulWidget {
   const TabBarContent({Key? key}) : super(key: key);
@@ -60,19 +64,13 @@ class _TabBarContentState extends State<TabBarContent> {
         ),
         body: TabBarView(
           children: <Widget>[
-            Container(
-              color: Colors.blue,
-            ),
-            Container(
-              color: Colors.teal,
-            ),
+            DataStructure(
+                //  color: Colors.blue,
+                ),
+            CPlusPlus(),
             DataBase(),
-            Container(
-              color: Colors.green,
-            ),
-            Container(
-              color: Colors.lightGreen,
-            ),
+            English(),
+            IOT(),
             ComputerCommunity()
           ],
         ),

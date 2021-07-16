@@ -36,7 +36,7 @@ class DataBase extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => VideoPdfButton(
                     title: 'Database Chapter Three',
-                    videoPath: variable.VideoPathChapterTwo,
+                    videoPath: variable.VideoPathChapterThree,
                     pdfPath: variable.PdfPathChapterThree,
                   ),
                 ),
@@ -51,7 +51,7 @@ class DataBase extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => VideoPdfButton(
                     title: 'Database Chapter Four',
-                    videoPath: variable.VideoPathChapterTwo,
+                    videoPath: variable.VideoPathChapterFour,
                     pdfPath: variable.PdfPathChapterFour,
                   ),
                 ),
