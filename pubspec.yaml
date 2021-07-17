@@ -10,6 +10,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   syncfusion_flutter_pdfviewer: ^19.2.46-beta
   chewie: ^1.2.2
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:
@@ -26,6 +27,7 @@ flutter:
     - assets/images/oit/
     - assets/images/background/
     - assets/images/dashboard/
+    - assets/images/info/
 
 
 #  fonts:

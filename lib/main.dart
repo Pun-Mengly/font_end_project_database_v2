@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../login/pages/login.page.dart';
+import 'package:front_end_project_database_v2/dashboard/dasboard.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +15,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         //  home: SafeArea(child: Scaffold(body: TabBarContent())));
-        home: LoginPage());
+        home: Dashboard());
     // home: DataTableWidget());
   }
 }

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../all_course/page/tab_bar.dart';
-import '../../dashboard/dasboard.dart';
+import 'package:front_end_project_database_v2/dashboard/dasboard.dart';
 
 class ButtonLogin extends StatefulWidget {
   @override

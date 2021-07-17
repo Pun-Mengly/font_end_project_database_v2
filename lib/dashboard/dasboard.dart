@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:front_end_project_database_v2/Information/facebook_ui/info.dart';
 
 import '../../dashboard/card.dart';
 import '../../list_student/table_student.dart';
@@ -42,13 +43,22 @@ class Dashboard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Container(
-                      height: size.toDouble(),
-                      width: size.toDouble(),
-                      child: CardDashboard(
-                        title: 'Information',
-                        image: 'assets/images/dashboard/Information.png',
-                      )),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => FacebookInfo(),
+                          ));
+                    },
+                    child: Container(
+                        height: size.toDouble(),
+                        width: size.toDouble(),
+                        child: CardDashboard(
+                          title: 'Information',
+                          image: 'assets/images/dashboard/Information.png',
+                        )),
+                  ),
                   SizedBox(
                     width: 20,
                   ),
