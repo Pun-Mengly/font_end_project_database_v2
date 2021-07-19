@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:front_end_project_database_v2/Information/facebook_ui/info.dart';
+import 'package:front_end_project_database_v2/setting/setting_page.dart';
 
 import '../../dashboard/card.dart';
 import '../../list_student/table_student.dart';
@@ -24,7 +25,7 @@ class Dashboard extends StatelessWidget {
           backgroundColor: Colors.grey[300],
           actions: [
             CircleAvatar(
-              backgroundColor: Colors.grey[300],
+              //backgroundColor: Colors.grey[300],
               radius: 21,
               child: Image.asset('assets/images/dashboard/user.png'),
             ),
@@ -134,13 +135,22 @@ class Dashboard extends StatelessWidget {
                   SizedBox(
                     width: 20,
                   ),
-                  Container(
-                      height: size.toDouble(),
-                      width: size.toDouble(),
-                      child: CardDashboard(
-                        title: 'Setting',
-                        image: 'assets/images/dashboard/setting.ico',
-                      )),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SettingPage(),
+                          ));
+                    },
+                    child: Container(
+                        height: size.toDouble(),
+                        width: size.toDouble(),
+                        child: CardDashboard(
+                          title: 'Setting',
+                          image: 'assets/images/dashboard/setting.ico',
+                        )),
+                  ),
                 ],
               ),
             ],

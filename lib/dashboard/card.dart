@@ -13,7 +13,7 @@ class CardDashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 7,
+      elevation: 5,
       shadowColor: Colors.grey,
       child: Center(
         child: Column(
