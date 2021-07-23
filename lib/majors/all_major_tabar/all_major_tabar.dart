@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:front_end_project_database_v2/drawer/drawer.dart';
 import 'package:front_end_project_database_v2/majors/c_plus_plus/all_chapter.dart';
 import 'package:front_end_project_database_v2/majors/computer_community/all_chapter.dart';
 import 'package:front_end_project_database_v2/majors/data_structure/all_chapter.dart';
@@ -28,12 +29,11 @@ class _TabBarContentState extends State<TabBarContent> {
       initialIndex: 0,
       length: header.length,
       child: Scaffold(
-        drawer: Drawer(),
+        drawer: DrawerContent(),
         appBar: AppBar(
           actions: [
             CircleAvatar(
-              backgroundColor: Colors.brown,
-              child: Icon(Icons.person_outline),
+              child: Image.asset('assets/images/dashboard/user.png'),
             ),
             SizedBox(
               width: 12,

@@ -81,7 +81,7 @@ class _LoginPageState extends State<LoginPage> {
                           ],
                         ),
                         SizedBox(
-                          height: 7,
+                          height: 2,
                         ),
                         Container(
                             width: 300,
