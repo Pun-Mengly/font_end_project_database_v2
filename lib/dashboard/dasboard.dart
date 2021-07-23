@@ -24,6 +24,15 @@ class Dashboard extends StatelessWidget {
           leading: Icon(Icons.menu, color: Colors.black),
           backgroundColor: Colors.grey[300],
           actions: [
+            IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.notifications_outlined,
+                  size: 38,color: Colors.black,
+                )),
+            SizedBox(
+              width: 8,
+            ),
             CircleAvatar(
               //backgroundColor: Colors.grey[300],
               radius: 21,

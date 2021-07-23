@@ -47,7 +47,7 @@ class _LoginPageState extends State<LoginPage> {
                             obsText: false,
                             auth: emailController),
                         SizedBox(
-                          height: 7,
+                          height: 4,
                         ),
                         _textField(
                             name: 'Password',
@@ -79,6 +79,9 @@ class _LoginPageState extends State<LoginPage> {
                                   ),
                                 )),
                           ],
+                        ),
+                        SizedBox(
+                          height: 7,
                         ),
                         Container(
                             width: 300,
@@ -141,8 +144,8 @@ class _LoginPageState extends State<LoginPage> {
     return CircleAvatar(
       backgroundColor: Colors.white10,
       radius: 80,
-      child: Image.network(
-        'https://www.freepnglogos.com/uploads/facebook-logo-icon/facebook-logo-icon-facebook-logo-png-transparent-svg-vector-bie-supply-16.png',
+      child: Image.asset(
+        'assets/images/dashboard/Information.png',
         fit: BoxFit.cover,
       ),
     );

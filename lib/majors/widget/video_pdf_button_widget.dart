@@ -44,6 +44,9 @@ class VideoPdfButton extends StatelessWidget {
                     //   );
                     //  },
                     child: Text('Learn by Video')),
+                SizedBox(
+                  height: 3,
+                ),
                 ElevatedButton(
                     onPressed: () {
                       Navigator.push(

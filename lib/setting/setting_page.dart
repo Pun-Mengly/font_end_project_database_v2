@@ -75,7 +75,7 @@ class _SettingPageState extends State<SettingPage> {
                 'Programmer',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
-              subtitle: Text('Programmer@gmail.com'),
+              subtitle: Text('Student E4'),
               trailing: ElevatedButton(
                 child: Text('Log out'),
                 onPressed: () {
