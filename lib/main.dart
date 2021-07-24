@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:front_end_project_database_v2/Information/facebook_ui/info.dart';
+import 'package:front_end_project_database_v2/majors/all_major_tabar/all_major_tabar.dart';
 
 void main() {
   runApp(MyApp());
@@ -20,6 +20,6 @@ class MyApp extends StatelessWidget {
         ),
         //  home: SafeArea(child: Scaffold(body: TabBarContent())));
         //     home: Dashboard());
-        home: FacebookInfo());
+        home: TabBarContent());
   }
 }

@@ -19,9 +19,24 @@ class ComputerCommunity extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) => VideoPdfButton(
+                    title: 'Computer community Chapter One',
+                    videoPath: variable.videoPathChapterTwo,
+                    pdfPath: variable.pdfPathChapterTwo,
+                  ),
+                ),
+              );
+            },
+            chapter: 'Chapter 1',
+          ),
+          CardCourseComputerCommunity(
+            pathOfPdfOnTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => VideoPdfButton(
                     title: 'Computer community Chapter Two',
-                    videoPath: variable.VideoPathChapterTwo,
-                    pdfPath: variable.PdfPathChapterTwo,
+                    videoPath: variable.videoPathChapterTwo,
+                    pdfPath: variable.pdfPathChapterTwo,
                   ),
                 ),
               );
@@ -35,8 +50,8 @@ class ComputerCommunity extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => VideoPdfButton(
                     title: 'Computer community Chapter Three',
-                    videoPath: variable.VideoPathChapterTwo,
-                    pdfPath: variable.PdfPathChapterThree,
+                    videoPath: variable.videoPathChapterTwo,
+                    pdfPath: variable.pdfPathChapterThree,
                   ),
                 ),
               );
@@ -50,8 +65,8 @@ class ComputerCommunity extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => VideoPdfButton(
                     title: 'Computer community Chapter Four',
-                    videoPath: variable.VideoPathChapterTwo,
-                    pdfPath: variable.PdfPathChapterFour,
+                    videoPath: variable.videoPathChapterTwo,
+                    pdfPath: variable.pdfPathChapterFour,
                   ),
                 ),
               );
@@ -65,8 +80,8 @@ class ComputerCommunity extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => VideoPdfButton(
                     title: 'Computer community Chapter Five',
-                    videoPath: variable.VideoPathChapterTwo,
-                    pdfPath: variable.PdfPathChapterFive,
+                    videoPath: variable.videoPathChapterTwo,
+                    pdfPath: variable.pdfPathChapterFive,
                   ),
                 ),
               );
@@ -80,8 +95,8 @@ class ComputerCommunity extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => VideoPdfButton(
                     title: 'Computer community Chapter Six',
-                    videoPath: variable.VideoPathChapterTwo,
-                    pdfPath: variable.PdfPathChapterSix,
+                    videoPath: variable.videoPathChapterTwo,
+                    pdfPath: variable.pdfPathChapterSix,
                   ),
                 ),
               );
@@ -95,8 +110,8 @@ class ComputerCommunity extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => VideoPdfButton(
                     title: 'Computer community Chapter Seven',
-                    videoPath: variable.VideoPathChapterTwo,
-                    pdfPath: variable.PdfPathChapterSeven,
+                    videoPath: variable.videoPathChapterTwo,
+                    pdfPath: variable.pdfPathChapterSeven,
                   ),
                 ),
               );
@@ -110,8 +125,8 @@ class ComputerCommunity extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => VideoPdfButton(
                     title: 'Computer community Chapter Eight',
-                    videoPath: variable.VideoPathChapterTwo,
-                    pdfPath: variable.PdfPathChapterEight,
+                    videoPath: variable.videoPathChapterTwo,
+                    pdfPath: variable.pdfPathChapterEight,
                   ),
                 ),
               );

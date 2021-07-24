@@ -20,9 +20,24 @@ class English extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) => VideoPdfButton(
+                    title: 'English Chapter One',
+                    videoPath: variable.videoPathChapterTwo,
+                    pdfPath: variable.pdfPathChapterTwo,
+                  ),
+                ),
+              );
+            },
+            chapter: 'Chapter 1',
+          ),
+          CardCourseEnglish(
+            pathOfPdfOnTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => VideoPdfButton(
                     title: 'English Chapter Two',
-                    videoPath: variable.VideoPathChapterTwo,
-                    pdfPath: variable.PdfPathChapterTwo,
+                    videoPath: variable.videoPathChapterTwo,
+                    pdfPath: variable.pdfPathChapterTwo,
                   ),
                 ),
               );
@@ -36,8 +51,8 @@ class English extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => VideoPdfButton(
                     title: 'English Chapter Three',
-                    videoPath: variable.VideoPathChapterThree,
-                    pdfPath: variable.PdfPathChapterThree,
+                    videoPath: variable.videoPathChapterThree,
+                    pdfPath: variable.pdfPathChapterThree,
                   ),
                 ),
               );
@@ -51,8 +66,8 @@ class English extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => VideoPdfButton(
                     title: 'English Chapter Four',
-                    videoPath: variable.VideoPathChapterFour,
-                    pdfPath: variable.PdfPathChapterFour,
+                    videoPath: variable.videoPathChapterFour,
+                    pdfPath: variable.pdfPathChapterFour,
                   ),
                 ),
               );
@@ -66,8 +81,8 @@ class English extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => VideoPdfButton(
                     title: 'English Chapter Five',
-                    videoPath: variable.VideoPathChapterTwo,
-                    pdfPath: variable.PdfPathChapterFive,
+                    videoPath: variable.videoPathChapterTwo,
+                    pdfPath: variable.pdfPathChapterFive,
                   ),
                 ),
               );
@@ -81,8 +96,8 @@ class English extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => VideoPdfButton(
                     title: 'English Chapter Six',
-                    videoPath: variable.VideoPathChapterTwo,
-                    pdfPath: variable.PdfPathChapterSix,
+                    videoPath: variable.videoPathChapterTwo,
+                    pdfPath: variable.pdfPathChapterSix,
                   ),
                 ),
               );
@@ -96,8 +111,8 @@ class English extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => VideoPdfButton(
                     title: 'English Chapter Seven',
-                    videoPath: variable.VideoPathChapterTwo,
-                    pdfPath: variable.PdfPathChapterSeven,
+                    videoPath: variable.videoPathChapterTwo,
+                    pdfPath: variable.pdfPathChapterSeven,
                   ),
                 ),
               );
@@ -111,8 +126,8 @@ class English extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => VideoPdfButton(
                     title: 'English Chapter Eight',
-                    videoPath: variable.VideoPathChapterTwo,
-                    pdfPath: variable.PdfPathChapterEight,
+                    videoPath: variable.videoPathChapterTwo,
+                    pdfPath: variable.pdfPathChapterEight,
                   ),
                 ),
               );

@@ -11,6 +11,7 @@ dependencies:
   syncfusion_flutter_pdfviewer: ^19.2.46-beta
   chewie: ^1.2.2
   intl: ^0.17.0
+  video_player: ^2.1.12
   google_fonts: ^2.1.0
   font_awesome_flutter: ^9.1.0
 dev_dependencies:
@@ -22,7 +23,7 @@ flutter:
     - assets/images/database_image/
     - assets/pdf_docs/database_pdf/
     - assets/video/database/
-    - assets/images/datastructre/
+    - assets/images/datastructures/
     - assets/images/c_plus_plus/
     - assets/images/english/
     - assets/images/oit/

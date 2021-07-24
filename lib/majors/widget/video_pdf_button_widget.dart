@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:front_end_project_database_v2/core/asset_video_path.dart';
 import 'package:front_end_project_database_v2/core/assets_pdf_path.dart';
 
 class VideoPdfButton extends StatelessWidget {
@@ -31,18 +32,17 @@ class VideoPdfButton extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
-                    onPressed: null,
-                    // onPressed: () {
-                    //   Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(
-                    //       builder: (context) => CoreVideosWidget(
-                    //         path: videoPath,
-                    //         title: 'Database System Chapter Two',
-                    //       ),
-                    //     ),
-                    //   );
-                    //  },
+                    // onPressed: null,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => VideoApp(
+                            path: videoPath,
+                          ),
+                        ),
+                      );
+                    },
                     child: Text('Learn by Video')),
                 SizedBox(
                   height: 3,
