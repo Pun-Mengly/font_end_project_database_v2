@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:front_end_project_database_v2/core/asset_video_path.dart';
-import 'package:front_end_project_database_v2/core/assets_pdf_path.dart';
+
+import '../../core/asset_video_path.dart';
+import '../../core/assets_pdf_path.dart';
 
 class VideoPdfButton extends StatelessWidget {
   final String title;

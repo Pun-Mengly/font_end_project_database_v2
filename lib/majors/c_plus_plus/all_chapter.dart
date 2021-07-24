@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:front_end_project_database_v2/majors/c_plus_plus/widget/card_widget.dart';
-import 'package:front_end_project_database_v2/majors/database/util/core_database_declaration.dart';
-import 'package:front_end_project_database_v2/majors/widget/video_pdf_button_widget.dart';
+
+import '../../majors/c_plus_plus/widget/card_widget.dart';
+import '../../majors/database/util/core_database_declaration.dart';
+import '../../majors/widget/video_pdf_button_widget.dart';
 
 class CPlusPlus extends StatelessWidget {
   const CPlusPlus({Key? key}) : super(key: key);

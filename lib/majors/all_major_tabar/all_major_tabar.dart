@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:front_end_project_database_v2/drawer/drawer.dart';
-import 'package:front_end_project_database_v2/majors/c_plus_plus/all_chapter.dart';
-import 'package:front_end_project_database_v2/majors/computer_community/all_chapter.dart';
-import 'package:front_end_project_database_v2/majors/data_structure/all_chapter.dart';
-import 'package:front_end_project_database_v2/majors/database/all_chapter.dart';
-import 'package:front_end_project_database_v2/majors/english/all_chapter.dart';
-import 'package:front_end_project_database_v2/majors/iot/all_chapter.dart';
+
+import '../../drawer/drawer.dart';
+import '../../majors/c_plus_plus/all_chapter.dart';
+import '../../majors/computer_community/all_chapter.dart';
+import '../../majors/data_structure/all_chapter.dart';
+import '../../majors/database/all_chapter.dart';
+import '../../majors/english/all_chapter.dart';
+import '../../majors/iot/all_chapter.dart';
 
 class TabBarContent extends StatefulWidget {
   const TabBarContent({Key? key}) : super(key: key);

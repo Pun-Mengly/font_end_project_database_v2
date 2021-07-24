@@ -2,8 +2,9 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:front_end_project_database_v2/list_student/model.dart';
 import 'package:http/http.dart' as http;
+
+import 'model.dart';
 
 class DataTableWidget extends StatefulWidget {
   @override

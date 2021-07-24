@@ -1,8 +1,9 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:front_end_project_database_v2/Information/model/person.dart';
 import 'package:http/http.dart' as http;
+
+import '../../Information/model/person.dart';
 
 class FacebookInfo extends StatefulWidget {
   const FacebookInfo({Key? key}) : super(key: key);

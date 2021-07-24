@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:front_end_project_database_v2/Information/facebook_ui/info.dart';
-import 'package:front_end_project_database_v2/setting/setting_page.dart';
 
+import '../../Information/facebook_ui/info.dart';
 import '../../dashboard/card.dart';
 import '../../list_student/table_student.dart';
 import '../../majors/all_major_tabar/all_major_tabar.dart';
+import '../../setting/setting_page.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -28,7 +28,8 @@ class Dashboard extends StatelessWidget {
                 onPressed: () {},
                 icon: Icon(
                   Icons.notifications_outlined,
-                  size: 38,color: Colors.black,
+                  size: 38,
+                  color: Colors.black,
                 )),
             SizedBox(
               width: 8,

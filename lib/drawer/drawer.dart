@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:front_end_project_database_v2/drawer/widget.dart';
+
+import '../../drawer/widget.dart';
 
 class DrawerContent extends StatefulWidget {
   const DrawerContent({Key? key}) : super(key: key);
@@ -9,7 +10,7 @@ class DrawerContent extends StatefulWidget {
 }
 
 class _DrawerContentState extends State<DrawerContent> {
-  static int index = 0;
+  //static int index = 0;
   @override
   Widget build(BuildContext context) {
     return Theme(
