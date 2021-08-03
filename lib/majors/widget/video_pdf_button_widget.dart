@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../core/asset_video_path.dart';
 import '../../core/assets_pdf_path.dart';
 
 class VideoPdfButton extends StatelessWidget {
@@ -18,6 +17,7 @@ class VideoPdfButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.grey[300],
         appBar: AppBar(
           title: Text(title),
         ),
@@ -33,17 +33,17 @@ class VideoPdfButton extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
-                    // onPressed: null,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => VideoApp(
-                            path: videoPath,
-                          ),
-                        ),
-                      );
-                    },
+                    onPressed: null,
+                    // onPressed: () {
+                    //   Navigator.push(
+                    //     context,
+                    //     MaterialPageRoute(
+                    //       builder: (context) => VideoApp(
+                    //         path: videoPath,
+                    //       ),
+                    //     ),
+                    //   );
+                    // },
                     child: Text('Learn by Video')),
                 SizedBox(
                   height: 3,

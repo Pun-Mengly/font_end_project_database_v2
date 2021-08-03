@@ -16,7 +16,24 @@ class _FacebookInfoState extends State<FacebookInfo> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
+        child: Scaffold(
+      body: NestedScrollView(
+        floatHeaderSlivers: true,
+        headerSliverBuilder: (context, innerBoxIsScrolled) => [
+          SliverAppBar(
+            actions: [
+              CircleAvatar(
+                child: Image.asset('assets/images/dashboard/Information.png'),
+              ),
+              SizedBox(
+                width: 12,
+              )
+            ],
+            title: Text('News'.toUpperCase()),
+            backgroundColor: Colors.indigo,
+          ),
+        ],
+
         // body:
         // SingleChildScrollView(
         //   child: Padding(
@@ -49,7 +66,7 @@ class _FacebookInfoState extends State<FacebookInfo> {
           onRefresh: getApi,
           child: FutureBuilder(
             future: getApi(),
-            builder: (context, AsyncSnapshot<List<Person>> snapshot) {
+            builder: (context, AsyncSnapshot<List<Info>> snapshot) {
               if (snapshot.hasData) {
                 return ListView.builder(
                   itemCount: snapshot.data!.length,
@@ -67,8 +84,8 @@ class _FacebookInfoState extends State<FacebookInfo> {
                                   children: [
                                     CircleAvatar(
                                       radius: 28,
-                                      child: Image.network(
-                                          'https://lh3.googleusercontent.com/proxy/IKIp28ZJGa9rfMvdV7V_I37BAGw80OwDmPYNaSTgvD6CYwYlUS9cfdULWYJy0NWbXIubybIAIzXye5FBDKql-Uo'),
+                                      child: Image.asset(
+                                          'assets/images/dashboard/Information.png'),
                                     ),
                                     SizedBox(
                                       width: 10,
@@ -87,7 +104,7 @@ class _FacebookInfoState extends State<FacebookInfo> {
                                           height: 8,
                                         ),
                                         Text(
-                                          snapshot.data![index].sex,
+                                          snapshot.data![index].date,
                                           style: TextStyle(fontSize: 11),
                                         )
                                       ],
@@ -101,14 +118,14 @@ class _FacebookInfoState extends State<FacebookInfo> {
                               padding: const EdgeInsets.only(
                                   top: 12.0, bottom: 12, right: 0, left: 0),
                               child: Text(
-                                snapshot.data![index].name,
+                                snapshot.data![index].context,
                                 style: TextStyle(fontSize: 16),
                               ),
                             ),
                             Container(
                               margin: EdgeInsets.only(
                                   top: 10, bottom: 20, right: 30, left: 30),
-                              child: Image.network(snapshot.data![index].photo),
+                              child: Image.network(snapshot.data![index].image),
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -164,7 +181,7 @@ class _FacebookInfoState extends State<FacebookInfo> {
           ),
         ),
       ),
-    );
+    ));
   }
 
   Widget _style() {
@@ -184,16 +201,16 @@ class _FacebookInfoState extends State<FacebookInfo> {
     );
   }
 
-  Future<List<Person>> getApi() async {
+  Future<List<Info>> getApi() async {
     final Uri uri =
-        Uri.parse('http://testapi168-001-site1.htempurl.com/api/People');
+        Uri.parse('http://mengly-001-site1.dtempurl.com/api/Infoes');
     final response = await http.get(uri);
     print(response.body);
     if (response.statusCode == 200) {
       print('HHH');
       final jsonData = jsonDecode(response.body).cast<Map<String, dynamic>>();
-      final List<Person> person =
-          jsonData.map<Person>((e) => Person.fromJson(e)).toList();
+      final List<Info> person =
+          jsonData.map<Info>((e) => Info.fromJson(e)).toList();
       print(person);
       setState(() {});
       return person;

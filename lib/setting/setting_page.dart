@@ -18,6 +18,7 @@ class _SettingPageState extends State<SettingPage> {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.indigo,
         title: Text('Profile Setting'),
       ),
       backgroundColor: Colors.grey[300],
@@ -64,13 +65,9 @@ class _SettingPageState extends State<SettingPage> {
           child: Center(
             child: ListTile(
               leading: CircleAvatar(
-                backgroundColor: Colors.white10,
                 radius: 30,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(90),
-                  child:
-                      Image.network('https://i.mydramalist.com/qRVoD_5_c.jpg'),
-                ),
+                backgroundImage:
+                    AssetImage('assets/images/background/profile.jpg'),
               ),
               title: Text(
                 'Programmer',

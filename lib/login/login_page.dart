@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../../dashboard/dashboard.dart';
+import 'package:front_end_project_database_v2/dashboard/dashboard.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -24,8 +23,8 @@ class _LoginPageState extends State<LoginPage> {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(28),
               image: DecorationImage(
-                  image: NetworkImage(
-                      'https://images.unsplash.com/photo-1606636660801-c61b8e97a1dc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fGVkdWNhdGlvbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80'),
+                  image: AssetImage(
+                      'assets/images/background/background_login.jfif'),
                   fit: BoxFit.cover)),
           child: Center(
             child: Container(
@@ -87,20 +86,42 @@ class _LoginPageState extends State<LoginPage> {
                         Container(
                             width: 300,
                             child: _button(
-                                name: 'Login'.toUpperCase(),
-                                onTap: () {
-                                  if (emailController.text == email &&
-                                      passController.text == password) {
-                                    Navigator.pushReplacement(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) => Dashboard(),
-                                        ));
-                                    print('Login');
-                                  } else
-                                    print('Wrong hx');
-                                  Text('');
-                                }))
+                              name: 'Login'.toUpperCase(),
+                              onTap: () {
+                                // if (emailController.text == email &&
+                                //     passController.text == password) {
+                                //   Navigator.pushReplacement(
+                                //       context,
+                                //       MaterialPageRoute(
+                                //         builder: (context) => Dashboard(),
+                                //       ));
+                                //   print('Login');
+                                // } else
+                                //   print('Wrong hx');
+                                // Text('');
+
+                                if (emailController.text == email &&
+                                    passController.text == password) {
+                                  _snackBarSuccess();
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => Dashboard(),
+                                      ));
+                                  print('Login');
+
+                                  // _change();
+                                } else if (emailController.text == email &&
+                                    passController.text != password) {
+                                  _snackBarWrongPass();
+                                } else if (emailController.text != email &&
+                                    passController.text == password) {
+                                  _snackBarWrongUser();
+                                } else {
+                                  _snackBarWrong();
+                                }
+                              },
+                            ))
                       ],
                     ),
                   ],
@@ -150,5 +171,41 @@ class _LoginPageState extends State<LoginPage> {
         fit: BoxFit.cover,
       ),
     );
+  }
+
+  void _snackBarSuccess() {
+    const snackBar = SnackBar(
+      content: Text('Success'),
+      duration: Duration(seconds: 1),
+      backgroundColor: Colors.indigo,
+    );
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
+
+  void _snackBarWrongUser() {
+    const snackBar = SnackBar(
+      content: Text('Invalid username'),
+      duration: Duration(seconds: 1),
+      backgroundColor: Colors.red,
+    );
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
+
+  void _snackBarWrongPass() {
+    const snackBar = SnackBar(
+      content: Text('Invalid password'),
+      duration: Duration(seconds: 1),
+      backgroundColor: Colors.red,
+    );
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
+
+  void _snackBarWrong() {
+    const snackBar = SnackBar(
+      content: Text('Invalid username & password'),
+      duration: Duration(seconds: 1),
+      backgroundColor: Colors.red,
+    );
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 }

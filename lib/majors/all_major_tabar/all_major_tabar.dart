@@ -31,50 +31,100 @@ class _TabBarContentState extends State<TabBarContent> {
       length: header.length,
       child: Scaffold(
         drawer: DrawerContent(),
-        appBar: AppBar(
-          actions: [
-            CircleAvatar(
-              child: Image.asset('assets/images/dashboard/user.png'),
-            ),
-            SizedBox(
-              width: 12,
-            )
-          ],
-          title: Text('e-learning'.toUpperCase()),
-          backgroundColor: Colors.indigo,
-          bottom: TabBar(
-            //indicatorPadding: EdgeInsets.zero(),
-            indicatorColor: Colors.black,
-            indicator: ShapeDecoration(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(
-                        bottomRight: Radius.circular(8),
-                        topRight: Radius.circular(8),
-                        topLeft: Radius.circular(8),
-                        bottomLeft: Radius.circular(8))),
-                color: Colors.black26),
-            isScrollable: true,
-            automaticIndicatorColorAdjustment: false,
-            tabs: [
-              for (var head in header)
-                Tab(
-                  text: head,
+        body: NestedScrollView(
+          floatHeaderSlivers: true,
+          headerSliverBuilder: (context, innerBoxIsScrolled) => [
+            SliverAppBar(
+              actions: [
+                CircleAvatar(
+                  backgroundImage:
+                      AssetImage('assets/images/background/profile.jpg'),
                 ),
+                SizedBox(
+                  width: 12,
+                )
+              ],
+              title: Text('e-learning'.toUpperCase()),
+              backgroundColor: Colors.indigo,
+              bottom: TabBar(
+                //indicatorPadding: EdgeInsets.zero(),
+                indicatorColor: Colors.black,
+                indicator: ShapeDecoration(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                            bottomRight: Radius.circular(8),
+                            topRight: Radius.circular(8),
+                            topLeft: Radius.circular(8),
+                            bottomLeft: Radius.circular(8))),
+                    color: Colors.black26),
+                isScrollable: true,
+                automaticIndicatorColorAdjustment: false,
+                tabs: [
+                  for (var head in header)
+                    Tab(
+                      text: head,
+                    ),
+                ],
+              ),
+            ),
+          ],
+          // appBar: SliverAppBar(
+          //   actions: [
+          //     CircleAvatar(
+          //       child: Image.asset('assets/images/dashboard/user.png'),
+          //     ),
+          //     SizedBox(
+          //       width: 12,
+          //     )
+          //   ],
+          //   title: Text('e-learning'.toUpperCase()),
+          //   backgroundColor: Colors.indigo,
+          //   bottom: TabBar(
+          //     //indicatorPadding: EdgeInsets.zero(),
+          //     indicatorColor: Colors.black,
+          //     indicator: ShapeDecoration(
+          //         shape: RoundedRectangleBorder(
+          //             borderRadius: BorderRadius.only(
+          //                 bottomRight: Radius.circular(8),
+          //                 topRight: Radius.circular(8),
+          //                 topLeft: Radius.circular(8),
+          //                 bottomLeft: Radius.circular(8))),
+          //         color: Colors.black26),
+          //     isScrollable: true,
+          //     automaticIndicatorColorAdjustment: false,
+          //     tabs: [
+          //       for (var head in header)
+          //         Tab(
+          //           text: head,
+          //         ),
+          //     ],
+          //   ),
+          // ),
+          body: TabBarView(
+            children: <Widget>[
+              DataStructure(
+                  //  color: Colors.blue,
+                  ),
+              CPlusPlus(),
+              DataBase(),
+              English(),
+              IOT(),
+              ComputerCommunity()
             ],
           ),
         ),
-        body: TabBarView(
-          children: <Widget>[
-            DataStructure(
-                //  color: Colors.blue,
-                ),
-            CPlusPlus(),
-            DataBase(),
-            English(),
-            IOT(),
-            ComputerCommunity()
-          ],
-        ),
+        // body: TabBarView(
+        //   children: <Widget>[
+        //     DataStructure(
+        //         //  color: Colors.blue,
+        //         ),
+        //     CPlusPlus(),
+        //     DataBase(),
+        //     English(),
+        //     IOT(),
+        //     ComputerCommunity()
+        //   ],
+        // ),
       ),
     );
   }

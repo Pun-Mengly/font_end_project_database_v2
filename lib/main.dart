@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:front_end_project_database_v2/majors/all_major_tabar/all_major_tabar.dart';
+import 'package:front_end_project_database_v2/dashboard/dashboard.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         //  home: SafeArea(child: Scaffold(body: TabBarContent())));
-        //     home: Dashboard());
-        home: TabBarContent());
+        home: Dashboard());
+    // home: TabBarContent());
   }
 }

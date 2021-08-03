@@ -22,7 +22,7 @@ class DataBase extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => VideoPdfButton(
                     title: 'Database Chapter One',
-                    videoPath: variable.videoPathChapterTwo,
+                    videoPath: variable.videoPathChapterOne,
                     pdfPath: variable.pdfPathChapterTwo,
                   ),
                 ),

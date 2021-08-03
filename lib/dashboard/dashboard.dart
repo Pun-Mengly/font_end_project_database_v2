@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:front_end_project_database_v2/profile/profile_page.dart';
 
 import '../../Information/facebook_ui/info.dart';
 import '../../dashboard/card.dart';
@@ -34,10 +35,20 @@ class Dashboard extends StatelessWidget {
             SizedBox(
               width: 8,
             ),
-            CircleAvatar(
-              //backgroundColor: Colors.grey[300],
-              radius: 21,
-              child: Image.asset('assets/images/dashboard/user.png'),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ProfilePage(),
+                    ));
+              },
+              child: CircleAvatar(
+                //backgroundColor: Colors.grey[300],
+                radius: 21,
+                backgroundImage:
+                    AssetImage('assets/images/background/profile.jpg'),
+              ),
             ),
             SizedBox(
               width: 12,
@@ -90,32 +101,6 @@ class Dashboard extends StatelessWidget {
                           image: 'assets/images/dashboard/E_learning.png',
                         )),
                   ),
-                ],
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                      height: size.toDouble(),
-                      width: size.toDouble(),
-                      child: CardDashboard(
-                        title: 'View Attendances',
-                        image: 'assets/images/dashboard/vview_attendance.png',
-                      )),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Container(
-                      height: size.toDouble(),
-                      width: size.toDouble(),
-                      child: CardDashboard(
-                        title: 'Result Examination',
-                        image: 'assets/images/dashboard/exam.png',
-                      )),
                 ],
               ),
               SizedBox(

@@ -12,15 +12,35 @@ class DataTableWidget extends StatefulWidget {
 }
 
 class _DataTableWidgetState extends State<DataTableWidget> {
-  final List<String> header = ['Id', 'Name', 'Sex', 'Birthday'];
+  final List<String> header = [
+    'Id',
+    'FName',
+    'LName',
+    'Sex',
+    'Birthday',
+    'Contact',
+    'Address'
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('List of class'),
-        centerTitle: true,
-      ),
+        body: NestedScrollView(
+      floatHeaderSlivers: true,
+      headerSliverBuilder: (context, innerBoxIsScrolled) => [
+        SliverAppBar(
+          actions: [
+            CircleAvatar(
+              child: Image.asset('assets/images/dashboard/Information.png'),
+            ),
+            SizedBox(
+              width: 12,
+            )
+          ],
+          title: Text('List of class'.toUpperCase()),
+          backgroundColor: Colors.indigo,
+        ),
+      ],
       body: Center(
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
@@ -50,12 +70,13 @@ class _DataTableWidgetState extends State<DataTableWidget> {
                             rows: snapshot.data!.map((e) {
                               return DataRow(
                                 cells: <DataCell>[
-                                  DataCell(Text('${e.studentId}'.toString())),
-                                  DataCell(Text('${e.studentName}'.toString())),
-                                  DataCell(
-                                      Text('${e.studentGender}'.toString())),
-                                  DataCell(Text(
-                                      '${e.studentBirthOfDate}'.toString())),
+                                  DataCell(Text('${e.stuId}'.toString())),
+                                  DataCell(Text('${e.stuFname}'.toString())),
+                                  DataCell(Text('${e.stuLname}'.toString())),
+                                  DataCell(Text('${e.stuSex}'.toString())),
+                                  DataCell(Text('${e.stuDob}')),
+                                  DataCell(Text('${e.stuPhone}'.toString())),
+                                  DataCell(Text('${e.stuAdd}'.toString())),
                                 ],
                               );
                             }).toList()),
@@ -69,20 +90,22 @@ class _DataTableWidgetState extends State<DataTableWidget> {
           ),
         ),
       ),
-    );
+    ));
   }
 
   Future<List<Student>> getApi() async {
-    final Uri uri = Uri.parse('http://192.168.8.100/api/Rigister');
+    final Uri uri =
+        Uri.parse('http://mengly-001-site1.dtempurl.com/api/Students');
     final response = await http.get(uri);
-
+    print(response.body);
     if (response.statusCode == 200) {
+      //print('fff');
       final jsonData = jsonDecode(response.body).cast<Map<String, dynamic>>();
-      final List<Student> user =
+      final List<Student> person =
           jsonData.map<Student>((e) => Student.fromJson(e)).toList();
-      print(user);
+      //  print(person);
       setState(() {});
-      return user;
+      return person;
     } else
       throw Exception('Error');
   }
