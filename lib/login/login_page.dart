@@ -1,6 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:front_end_project_database_v2/dashboard/dashboard.dart';
+import 'package:front_end_project_database_v2/login/register.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -14,6 +17,7 @@ class _LoginPageState extends State<LoginPage> {
   var passController = TextEditingController();
   String email = 'Programmer@gmail.com';
   String password = 'Ly@#112233!!*';
+  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -66,6 +70,14 @@ class _LoginPageState extends State<LoginPage> {
                                     name: 'Register'.toUpperCase(),
                                     onTap: () {
                                       print('Register');
+                                      Navigator.push<dynamic>(
+                                        context,
+                                        MaterialPageRoute<dynamic>(
+                                          builder: (BuildContext context) =>
+                                              RegisterPage(),
+                                        ),
+                                        //if you want to disable back feature set to false
+                                      );
                                     })),
                             TextButton(
                                 onPressed: () {},
@@ -80,9 +92,9 @@ class _LoginPageState extends State<LoginPage> {
                                 )),
                           ],
                         ),
-                        SizedBox(
-                          height: 2,
-                        ),
+                        // SizedBox(
+                        //   height: 2,
+                        // ),
                         Container(
                             width: 300,
                             child: _button(
@@ -100,26 +112,29 @@ class _LoginPageState extends State<LoginPage> {
                                 //   print('Wrong hx');
                                 // Text('');
 
-                                if (emailController.text == email &&
-                                    passController.text == password) {
-                                  _snackBarSuccess();
-                                  Navigator.pushReplacement(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => Dashboard(),
-                                      ));
-                                  print('Login');
-
-                                  // _change();
-                                } else if (emailController.text == email &&
-                                    passController.text != password) {
-                                  _snackBarWrongPass();
-                                } else if (emailController.text != email &&
-                                    passController.text == password) {
-                                  _snackBarWrongUser();
-                                } else {
-                                  _snackBarWrong();
-                                }
+                                // if (emailController.text == email &&
+                                //     passController.text == password) {
+                                //   _snackBarSuccess();
+                                //   Navigator.pushReplacement(
+                                //       context,
+                                //       MaterialPageRoute(
+                                //         builder: (context) => Dashboard(),
+                                //       ));
+                                //   print('Login');
+                                //
+                                //   // _change();
+                                // } else if (emailController.text == email &&
+                                //     passController.text != password) {
+                                //   _snackBarWrongPass();
+                                // } else if (emailController.text != email &&
+                                //     passController.text == password) {
+                                //   _snackBarWrongUser();
+                                // } else {
+                                //   _snackBarWrong();
+                                // }
+                                setState(() {
+                                  _signInWithEmailAndPassword();
+                                });
                               },
                             ))
                       ],
@@ -207,5 +222,29 @@ class _LoginPageState extends State<LoginPage> {
       backgroundColor: Colors.red,
     );
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
+
+  //new
+  _signInWithEmailAndPassword() async {
+    try {
+      final User? user = (await _firebaseAuth.signInWithEmailAndPassword(
+              email: emailController.text.trim(),
+              password: passController.text.trim()))
+          .user;
+      if (user != null) {
+        setState(() {
+          Fluttertoast.showToast(msg: "Signed In Successfully");
+          Navigator.pushAndRemoveUntil<dynamic>(
+            context,
+            MaterialPageRoute<dynamic>(
+              builder: (BuildContext context) => Dashboard(),
+            ),
+            (route) => false, //if you want to disable back feature set to false
+          );
+        });
+      }
+    } catch (e) {
+      Fluttertoast.showToast(msg: e.toString());
+    }
   }
 }

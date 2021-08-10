@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "79593815736",
+    "project_id": "authdbv2",
+    "storage_bucket": "authdbv2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:79593815736:android:5a785b831012dc7606fe4d",
+        "android_client_info": {
+          "package_name": "com.example.front_end_project_database_v2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "79593815736-qo9tgbuo4185n7rg34eg2noge0a13d1f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAs3a8MF46j_OQqXCThnJOa-BBYBb7_6qY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "79593815736-qo9tgbuo4185n7rg34eg2noge0a13d1f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
