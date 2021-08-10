@@ -4,9 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:front_end_project_database_v2/dashboard/dashboard.dart';
 import 'package:front_end_project_database_v2/login/register.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  const LoginPage({
+    Key? key,
+  }) : super(key: key);
 
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -15,8 +18,8 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   var emailController = TextEditingController();
   var passController = TextEditingController();
-  String email = 'Programmer@gmail.com';
-  String password = 'Ly@#112233!!*';
+  // String email = 'Programmer@gmail.com';
+  // String password = 'Ly@#112233!!*';
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
@@ -99,7 +102,11 @@ class _LoginPageState extends State<LoginPage> {
                             width: 300,
                             child: _button(
                               name: 'Login'.toUpperCase(),
-                              onTap: () {
+                              onTap: () async {
+                                setState(() {
+                                  _signInWithEmailAndPassword();
+                                });
+
                                 // if (emailController.text == email &&
                                 //     passController.text == password) {
                                 //   Navigator.pushReplacement(
@@ -132,9 +139,6 @@ class _LoginPageState extends State<LoginPage> {
                                 // } else {
                                 //   _snackBarWrong();
                                 // }
-                                setState(() {
-                                  _signInWithEmailAndPassword();
-                                });
                               },
                             ))
                       ],
@@ -231,6 +235,11 @@ class _LoginPageState extends State<LoginPage> {
               email: emailController.text.trim(),
               password: passController.text.trim()))
           .user;
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      prefs.setString('email', user.toString());
+      Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (BuildContext ctx) => Dashboard()));
+
       if (user != null) {
         setState(() {
           Fluttertoast.showToast(msg: "Signed In Successfully");

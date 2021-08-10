@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../login/login_page.dart';
 
@@ -76,12 +77,14 @@ class _SettingPageState extends State<SettingPage> {
               subtitle: Text('Student E4'),
               trailing: ElevatedButton(
                 child: Text('Log out'),
-                onPressed: () {
+                onPressed: () async {
+                  SharedPreferences prefs =
+                      await SharedPreferences.getInstance();
+                  prefs.remove('email');
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => LoginPage(),
-                      ));
+                          builder: (BuildContext ctx) => LoginPage()));
                 },
               ),
             ),
