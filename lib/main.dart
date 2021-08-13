@@ -11,7 +11,10 @@ Future<void> main() async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
   var email = prefs.getString('email');
   print(email);
-  runApp(MaterialApp(home: email == null ? LoginPage() : Dashboard()));
+  runApp(MaterialApp(
+    home: email == null ? LoginPage() : Dashboard(),
+    debugShowCheckedModeBanner: false,
+  ));
 }
 //
 // class MyApp extends StatelessWidget {
